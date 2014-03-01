@@ -2,7 +2,6 @@
 // autor: Adam Jurczyk
 
 var bkg = document.getElementById('bkg');
-var controls = document.getElementById('controls');
 var counter = document.getElementById('counter');
 
 var ctx = bkg.getContext('2d');
@@ -12,7 +11,8 @@ var RECT_FILL_SIZE = 3;
 
 var fullWidth, fullHeight,
     cols, rows,
-    walker, isWalking = true;
+    walker, isWalking = true,
+    fillStyle = '#268bd2';
 
 var randDir = function(){
     return Math.floor(Math.random()*3-1);
@@ -49,12 +49,16 @@ var init = function(evt){
     cols = Math.round(fullWidth/RECT_SIZE);
     rows = Math.round(fullHeight/RECT_SIZE);
     ctx.globalAlpha = 0.1;
-    ctx.fillStyle = '#dc322f';
+    ctx.fillStyle = fillStyle;
     walker = new Walker();
 };
 window.addEventListener('resize', init);
 
-var playpause = controls.getElementsByClassName('fa')[0];
+
+var controls = document.getElementById('controls');
+var settings = document.getElementById('settings');
+
+var playpause = controls.getElementsByClassName('playpause')[0];
 playpause.addEventListener('click', function(evt){
     if(isWalking){
         playpause.classList.remove('fa-pause');
@@ -65,6 +69,25 @@ playpause.addEventListener('click', function(evt){
         window.requestAnimationFrame(onframe);
     }
     isWalking = !isWalking;
+});
+var gear = controls.getElementsByClassName('fa-gear')[0];
+gear.addEventListener('click', function(evt){
+    var ss = settings.style;
+    var visible = ss.visibility = 'visible';
+    ss.visibility = (visible ? '' : 'visible');
+});
+
+var fgColorRadios = settings.querySelectorAll('input[name="fg-color"]');
+Array.prototype.forEach.call(fgColorRadios, function(radio){
+    radio.addEventListener('change', function(e){
+        ctx.fillStyle = fillStyle = '#'+e.target.value;
+    });
+});
+var bgColorRadios = settings.querySelectorAll('input[name="bg-color"]');
+Array.prototype.forEach.call(bgColorRadios, function(radio){
+    radio.addEventListener('change', function(e){
+        bkg.style.backgroundColor = '#'+e.target.value;
+    });
 });
 
 

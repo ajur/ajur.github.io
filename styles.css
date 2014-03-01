@@ -4,15 +4,23 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #fdf6e3;
     color: #002B36;
     font-size: 14px;
     font-family:proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.box {
+    background-color: #073642;
+    color: #eee8d5;
+    text-shadow: 0px -1px #000;
+    border-radius: 0.2em;
+    padding: 0.2em 0.5em;
+}
+
 a, a:link, a:active, a:visited, .action {
     color: #72efff;
     text-decoration: none;
+    cursor: pointer;
 }
 a:link:hover {
     text-decoration: underline;
@@ -24,11 +32,9 @@ a:link:hover {
     left: 1em;
 }
 #content h1 {
-    background-color: #073642;
     color: #fff;
     margin: 0 0 0.5em;
     padding: 0.1em 0.5em 0.2em;
-    border-radius: 0.2em;
 }
 #content .social {
     list-style: none;
@@ -36,12 +42,10 @@ a:link:hover {
     padding: 0;
 }
 #content .social li {
-    margin: 0 0 0.7em;
+    margin: 0.7em 0;
 }
 #content .social li a {
-    background-color: #073642;
     padding: 0.2em 0.8em;
-    border-radius: 0.2em;
 }
 #content .social li .fa {
     margin-right: 0.5em;
@@ -55,18 +59,48 @@ a:link:hover {
     display: block;
     margin: 0;
     padding: 0;
+    background-color: #fdf6e3;
 }
+
 
 #controls {
     position: fixed;
-    right: 1em;
-    bottom: 1em;
-    background-color: #073642;
-    color: #eee8d5;
-    padding: 0.3em 0.5em 0.25em;
-    border-radius: 0.2em;
+    right: 10px;
+    bottom: 52px;
 }
 
 #counter {
     margin-left: 0.2em;
 }
+
+#settings {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    text-align: right;
+/*    visibility: hidden;*/
+}
+#settings .color: {
+    padding: 0.2em;
+}
+#settings .color input {
+    display: none;
+}
+#settings .color label {
+    text-shadow: 0 -1px #000;
+    cursor: pointer;
+}
+#settings .color label .fa-check-circle { display: none; text-shadow: 0 0 0.5em rgba(255,255,255,0.5); }
+#settings .color input:checked + label .fa-check-circle { display: inline; }
+#settings .color input:checked + label .fa-circle { display: none; }
+#settings .color label[for$="blue"] { color: #268bd2; }
+#settings .color label[for$="cyan"] { color: #2aa198; }
+#settings .color label[for$="green"] { color: #859900; }
+#settings .color label[for$="yellow"] { color: #b58900; }
+#settings .color label[for$="orange"] { color: #cb4b16; }
+#settings .color label[for$="red"] { color: #dc322f; }
+#settings .color label[for$="magenta"] { color: #d33682; }
+#settings .color label[for$="violet"] { color: #6c71c4; }
+
+#settings .color label[for$="light"] { color: #fdf6e3; }
+#settings .color label[for$="dark"] { color: #002b36; }

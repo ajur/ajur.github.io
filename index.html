@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Adam Jurczyk</title>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <canvas id="bkg"></canvas>
     <div id="content">
-        <h1>Adam Jurczyk</h1>
+        <h1 class="box">Adam Jurczyk</h1>
         <ul class="social">
-            <li><a href="https://github.com/ajur">
+            <li><a href="https://github.com/ajur" class="box">
                 <i class="fa fa-github"></i>GitHub</a>
             </li>
-            <li><a href="http://www.linkedin.com/pub/adam-jurczyk/5a/15b/955">
+            <li><a href="http://www.linkedin.com/pub/adam-jurczyk/5a/15b/955" class="box">
                 <i class="fa fa-linkedin"></i>LinkedIn</a>
             </li>
-            <li><a href="https://twitter.com/akjurczyk">
+            <li><a href="https://twitter.com/akjurczyk" class="box">
                 <i class="fa fa-twitter"></i>@akjurczyk</a>
             </li>
         </ul>
     </div>
-    <div id="controls">
-        <i class="action fa fa-pause"></i>
+    <div id="controls" class="box">
+        <i class="action playpause fa fa-pause"></i>
         <span id="counter">0</span>
+        <i class="action fa fa-gear"></i>
+    </div>
+    <div id="settings" class="box">
+        <div class="color">
+            <input id="bg-color-light" type="radio" name="bg-color" value="fdf6e3" checked><label for="bg-color-light"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="bg-color-dark" type="radio" name="bg-color" value="002b36"><label for="bg-color-dark"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+        </div>
+        <div class="color">
+            <input id="fg-color-blue" type="radio" name="fg-color" value="268bd2" checked><label for="fg-color-blue"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-cyan" type="radio" name="fg-color" value="2aa198"><label for="fg-color-cyan"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-green" type="radio" name="fg-color" value="859900"><label for="fg-color-green"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-yellow" type="radio" name="fg-color" value="b58900"><label for="fg-color-yellow"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-orange" type="radio" name="fg-color" value="cb4b16"><label for="fg-color-orange"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-red" type="radio" name="fg-color" value="dc322f"><label for="fg-color-red"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-magenta" type="radio" name="fg-color" value="d33682"><label for="fg-color-magenta"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+            <input id="fg-color-violet" type="radio" name="fg-color" value="6c71c4"><label for="fg-color-violet"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
 </html>
+
