@@ -72,9 +72,10 @@ playpause.addEventListener('click', function(evt){
 });
 var gear = controls.getElementsByClassName('fa-gear')[0];
 gear.addEventListener('click', function(evt){
-    var ss = settings.style;
-    var visible = ss.visibility = 'visible';
-    ss.visibility = (visible ? '' : 'visible');
+    if(settings.classList.contains('hidden'))
+        settings.classList.remove('hidden');
+    else
+        settings.classList.add('hidden');
 });
 
 var fgColorRadios = settings.querySelectorAll('input[name="fg-color"]');

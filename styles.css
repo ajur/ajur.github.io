@@ -16,6 +16,10 @@ html, body {
     border-radius: 0.2em;
     padding: 0.2em 0.5em;
 }
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
 
 a, a:link, a:active, a:visited, .action {
     color: #72efff;
@@ -66,7 +70,12 @@ a:link:hover {
 #controls {
     position: fixed;
     right: 10px;
-    bottom: 52px;
+    bottom: 10px;
+    text-align: right;
+}
+
+#controls .actions {
+    display: inline-block;
 }
 
 #counter {
@@ -74,11 +83,8 @@ a:link:hover {
 }
 
 #settings {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
+    margin-bottom: 0.2em;
     text-align: right;
-/*    visibility: hidden;*/
 }
 #settings .color: {
     padding: 0.2em;
