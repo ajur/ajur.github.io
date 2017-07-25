@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adam Jurczyk</title>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,6 +24,19 @@
             </li>
         </ul>
     </div>
+    <div id="nav">
+        <ul class="projects">
+            <li class="box"><a href="/nums/" >
+                <i class="fa fa-gamepad"></i>nums game</a>
+            </li>
+            <li class="box"><a href="/pixtris/dist/">
+                <i class="fa fa-gamepad"></i>pixtris</a>
+            </li>
+            <li class="box"><a href="https://www.lexaloffle.com/bbs/?tid=28867">
+                <i class="fa fa-gamepad"></i>vivi</a>
+            </li>
+        </ul>
+    </div>
     <div id="controls">
         <div id="settings" class="box hidden">
             <div class="color">
@@ -29,7 +44,8 @@
                 <input id="bg-color-dark" type="radio" name="bg-color" value="002b36"><label for="bg-color-dark"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
             </div>
             <div class="color">
-                <input id="fg-color-blue" type="radio" name="fg-color" value="268bd2" checked><label for="fg-color-blue"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
+                <input id="fg-color-rand" type="radio" name="fg-color" value="rand" checked><label for="fg-color-rand"><i class="fa fa-question-circle"></i></label>
+                <input id="fg-color-blue" type="radio" name="fg-color" value="268bd2"><label for="fg-color-blue"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
                 <input id="fg-color-cyan" type="radio" name="fg-color" value="2aa198"><label for="fg-color-cyan"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
                 <input id="fg-color-green" type="radio" name="fg-color" value="859900"><label for="fg-color-green"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
                 <input id="fg-color-yellow" type="radio" name="fg-color" value="b58900"><label for="fg-color-yellow"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
@@ -38,6 +54,13 @@
                 <input id="fg-color-magenta" type="radio" name="fg-color" value="d33682"><label for="fg-color-magenta"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
                 <input id="fg-color-violet" type="radio" name="fg-color" value="6c71c4"><label for="fg-color-violet"><i class="fa fa-circle"></i><i class="fa fa-check-circle"></i></label>
             </div>
+            <div class="speed">
+                <input id="speed-x1" type="radio" name="speed" value="1"><label for="speed-x1">x1</label>
+                <input id="speed-x4" type="radio" name="speed" value="4" checked><label for="speed-x4">x4</label>
+                <input id="speed-x16" type="radio" name="speed" value="16"><label for="speed-x16">x16</label>
+                <input id="speed-x64" type="radio" name="speed" value="64"><label for="speed-x64">x64</label>
+                <input id="speed-x256" type="radio" name="speed" value="256"><label for="speed-x256">x256</label>
+        </div>
         </div>
         <div class="box actions">
             <i class="action playpause fa fa-pause"></i>
@@ -46,6 +69,14 @@
         </div>
     </div>
     <script src="main.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-55681404-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
 </body>
 </html>
-

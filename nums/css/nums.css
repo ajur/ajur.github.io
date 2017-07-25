@@ -1,0 +1,125 @@
+html {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    border: 0;
+    background: #00aaff;
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 0.3em 1em;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 1em 0.5em;
+}
+
+
+#container {
+    text-align: center;
+}
+
+#panel-title h1 {
+    font-family: fantasy;
+    color: #00aaff;
+}
+
+#panel-title h1 span {
+	color: red;
+}
+
+
+#nums-score {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+#nums-score div {
+    display: inline-block;
+	width: 150px;
+	text-decoration: none;
+}
+#nums-score div.active {
+	text-decoration: underline;
+}
+#nums-score-summary {
+    clear: both;
+}
+#nums-score-summary span {
+    color: red;
+}
+   
+#nums-board {
+	border-collapse: separate;
+    border-spacing: 5px;
+	empty-cells:hide;
+	clear: both;
+    margin: 0 auto;
+}
+#nums-board td {
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	text-align: center;
+	vertical-align:center;
+    color: #007bff;
+	border: 1px solid #007bff;
+	background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 9px;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+#nums-board td.allowed {
+    border-width: 2px;
+    font-weight: bold;
+}
+#nums-board td.negative {
+	color: #fa5a5a;
+}
+#nums-board td.allowed:hover {
+	color: #fff;
+    background-color: #007bff;
+}
+#nums-board td.negative.allowed:hover {
+    background-color: #fa5a5a;
+}
+#nums-board td.inactive {
+	color: #fff;
+    border-color: #5acafa;
+}
+#nums-board td.last {
+    color: #5acafa;
+    background-color: #5acafa;
+}
+
+
+#panel-test table {
+	border-collapse: collapse;
+}
+#panel-test td {
+	border-left: 1px solid black;
+	padding: 2px;
+}
+#panel-test div {
+	float: left;
+	clear: both;
+	height: 20px;
+	width: 0;
+	margin: 0px;
+	padding: 0px;
+	background-color: darkred;
+}
+
+#board-map-src {
+	font-family: monospace;
+}
+
+.hidden {
+    display: none;
+}

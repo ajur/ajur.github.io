@@ -5,14 +5,15 @@ html, body {
     margin: 0;
     padding: 0;
     color: #002B36;
-    font-size: 14px;
+    font-size: 1em;
+    line-height: 1.2;
     font-family:proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .box {
     background-color: #073642;
     color: #eee8d5;
-    text-shadow: 0px -1px #000;
+    text-shadow: 0 -0.05em #000;
     border-radius: 0.2em;
     padding: 0.2em 0.5em;
 }
@@ -37,6 +38,7 @@ a:link:hover {
 }
 #content h1 {
     color: #fff;
+    font-size: 1.6em;
     margin: 0 0 0.5em;
     padding: 0.1em 0.5em 0.2em;
 }
@@ -66,11 +68,28 @@ a:link:hover {
     background-color: #fdf6e3;
 }
 
+#nav {
+    position: fixed;
+    left: 1em;
+    bottom: 1em;
+    text-align: left;
+}
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#nav ul li {
+    margin: 0.3em 0;
+}
+#nav li .fa {
+    margin-right: 0.5em;
+}
 
 #controls {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
+    right: 1em;
+    bottom: 1em;
     text-align: right;
 }
 
@@ -86,17 +105,15 @@ a:link:hover {
     margin-bottom: 0.2em;
     text-align: right;
 }
-#settings .color: {
-    padding: 0.2em;
-}
 #settings .color input {
     display: none;
 }
 #settings .color label {
-    text-shadow: 0 -1px #000;
+    text-shadow: 0 -0.05em #000;
     cursor: pointer;
 }
 #settings .color label .fa-check-circle { display: none; text-shadow: 0 0 0.5em rgba(255,255,255,0.5); }
+#settings .color input:checked + label .fa-question-circle { text-shadow: 0 0 0.5em rgba(255,255,255,0.5); }
 #settings .color input:checked + label .fa-check-circle { display: inline; }
 #settings .color input:checked + label .fa-circle { display: none; }
 #settings .color label[for$="blue"] { color: #268bd2; }
@@ -107,6 +124,21 @@ a:link:hover {
 #settings .color label[for$="red"] { color: #dc322f; }
 #settings .color label[for$="magenta"] { color: #d33682; }
 #settings .color label[for$="violet"] { color: #6c71c4; }
+#settings .color label[for$="rand"] { color: #ffffff; }
 
 #settings .color label[for$="light"] { color: #fdf6e3; }
 #settings .color label[for$="dark"] { color: #002b36; }
+
+#settings .speed input {
+    display: none;
+}
+#settings .speed label {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    margin-left: 0.2em;
+    text-shadow: 0 -0.05em #000;
+    cursor: pointer;
+}
+#settings .speed input:checked + label {
+    color: #ffffff;
+    text-shadow: 0 0 0.5em rgba(255,255,255,0.5);
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<title>Nums game</title>
+	<link href="css/nums.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+    
+    <div id="panel-title">
+        <h1>Nums game <span></span></h1>
+    </div>
+    
+    <div id="panel-game" class="hidden">
+        <div id="nums"></div>
+        <button onclick="NUMS.undo()">Undo</button>
+        <button onclick="NUMS.restart()">Rematch</button>
+        <button onclick="exit()">Exit</button>
+    </div>
+    
+    <div id="panel-mapper">
+        <p>Bellow you can change game board</p>
+        <div id="mapper"></div>
+        <button onclick="init(true)">Play with other player</button>
+        <button onclick="init()">Play with computer</button>
+    </div>
+</div>
+    
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/nums.js"></script>
+<script type="text/javascript" src="js/mapper.js"></script>
+<script type="text/javascript">
+function init(p2p){
+    if(!jQuery.ready){
+        return;
+    }
+    var opts;
+    
+    if(p2p){
+        opts = {
+            player1_human : true,
+            player1_name: 'Player 1',
+
+            player2_human : true,
+            player2_name : 'Player 2',
+
+            board_map : MAPPER.spec
+        };
+    }else{
+        opts = {
+            player1_human : true,
+            player1_name: 'You',
+
+            player2_human : false,
+            player2_ai : 'thinker',
+            player2_name : 'HAL',
+
+            board_map : MAPPER.spec
+        };
+    }
+    
+    NUMS(opts);
+    
+    $("#panel-game").show();
+    $("#panel-mapper").hide();
+    
+    NUMS.start();
+}
+
+function exit() {
+    if(!jQuery.ready){
+        return;
+    }
+    
+    $("#panel-game").hide();
+    $("#panel-mapper").show();
+}
+
+jQuery(document).ready(function(){
+    MAPPER.init("mapper");
+});
+
+</script>
+
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-55681404-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+
+</body>
+</html>
