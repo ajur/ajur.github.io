@@ -22,8 +22,9 @@
     <div id="panel-mapper">
         <p>Bellow you can change game board</p>
         <div id="mapper"></div>
-        <button onclick="init(true)">Play with other player</button>
-        <button onclick="init()">Play with computer</button>
+        <button onclick="init()">Play with other player</button>
+        <button onclick="init("naive", "Bender")">Play with Bender</button>
+	<button onclick="init("thinker", "HAL")">Play with HAL</button>
     </div>
 </div>
     
@@ -31,13 +32,13 @@
 <script type="text/javascript" src="js/nums.js"></script>
 <script type="text/javascript" src="js/mapper.js"></script>
 <script type="text/javascript">
-function init(p2p){
+function init(ai, aiName){
     if(!jQuery.ready){
         return;
     }
     var opts;
     
-    if(p2p){
+    if(!ai){
         opts = {
             player1_human : true,
             player1_name: 'Player 1',
@@ -53,8 +54,8 @@ function init(p2p){
             player1_name: 'You',
 
             player2_human : false,
-            player2_ai : 'thinker',
-            player2_name : 'HAL',
+            player2_ai : ai,
+            player2_name : aiName,
 
             board_map : MAPPER.spec
         };
