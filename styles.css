@@ -10,18 +10,6 @@ html, body {
     font-family:proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.box {
-    background-color: #073642;
-    color: #eee8d5;
-    text-shadow: 0 -0.05em #000;
-    border-radius: 0.2em;
-    padding: 0.2em 0.5em;
-}
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
 a, a:link, a:active, a:visited, .action {
     color: #72efff;
     text-decoration: none;
@@ -48,7 +36,7 @@ a:link:hover {
     padding: 0;
 }
 #content .social li {
-    margin: 0.7em 0;
+    margin: 0.2em 0;
 }
 #content .social li a {
     padding: 0.2em 0.8em;
@@ -58,6 +46,18 @@ a:link:hover {
 }
 
 
+.box {
+    display: block;
+    background-color: #073642;
+    color: #eee8d5;
+    text-shadow: 0 -0.05em #000;
+    border-radius: 0.2em;
+    padding: 0.2em 0.5em;
+}
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
 
 #bkg {
     width: 100%;
@@ -79,11 +79,14 @@ a:link:hover {
     margin: 0;
     padding: 0;
 }
-#nav ul li {
-    margin: 0.3em 0;
+#nav li {
+    margin: 0.2em 0;
 }
 #nav li .fa {
     margin-right: 0.5em;
+}
+#nav a {
+    width: 100%;
 }
 
 #controls {
